@@ -1,0 +1,29 @@
+name: marathon
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - numpy
+  - scipy
+  - pandas
+  - polars
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - plotly
+  - statsmodels
+  - joblib
+  - tqdm
+  - rich
+  - pyyaml
+  - ipykernel
+  - jupyterlab
+  
+  # extensions to py313-core
+  - xgboost
+  - lightgbm
+  - shap
+  - openpyxl     
+  - pyarrow
+  - pytest
+
