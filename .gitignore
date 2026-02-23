@@ -218,3 +218,6 @@ data/external/*
 results/figures/*
 !results/figures/.gitkeep
 
+# strava api keys
+keys.py
+

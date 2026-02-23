@@ -26,4 +26,6 @@ dependencies:
   - openpyxl     
   - pyarrow
   - pytest
+  - requests
+  - python-dotenv
 
