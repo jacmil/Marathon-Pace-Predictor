@@ -17,7 +17,7 @@ def riegel_predict(race_time: float | int, race_distance: float, target_distance
         float predicted race time in minutes
     """
 
-    return race_time * (target_distance / race_distance) ** 1.06
+    return race_time * (target_distance / race_distance) ** exponent
 
 def vdot_from_race(race_time: float, race_distance: float | int, rounding: int = 2) -> float:
     """Get VDOT score for a runner
