@@ -1,12 +1,14 @@
 import math
 
-def riegel_predict(race_time: float, race_distance: float, target_distance: float, exponent: float | float=1.06) -> float:
+# can still write try-except
+
+def riegel_predict(race_time: float | int, race_distance: float, target_distance: float, exponent: float | float=1.06) -> float:
     """Predict race time using Riegel formula
 
     Uses Riegel formula to predict race time.
 
     Args:
-        race time: previous race time 
+        race time: previous race time in minutes
         race distance: distance of that previous race
         target distance: distance of race to be predicted
         exponent: default exponent used in riegel formula
@@ -17,13 +19,13 @@ def riegel_predict(race_time: float, race_distance: float, target_distance: floa
 
     return race_time * (target_distance / race_distance) ** 1.06
 
-def vdot_from_race(race_time: float, race_distance: float, rounding: int = 2) -> float:
+def vdot_from_race(race_time: float, race_distance: float | int, rounding: int = 2) -> float:
     """Get VDOT score for a runner
 
     Uses Jack Daniels VDOT formula to get VDOT score for a runner
 
     Args:
-        race time: runner's previous race time
+        race time: runner's previous race time in minutes
         race distance: distance of runner's previous race
 
     Returns:
@@ -39,7 +41,7 @@ def vdot_from_race(race_time: float, race_distance: float, rounding: int = 2) ->
     return round(vdot, rounding)
 
 
-def vdot_predict(vdot: float, distance: float, tol: float = 0.01) -> float:
+def vdot_predict(vdot: float, race_distance: float, tol: float = 0.01) -> float:
     """Predicts race time from VDOT score
 
     Uses VDOT score to predict race time
@@ -53,10 +55,10 @@ def vdot_predict(vdot: float, distance: float, tol: float = 0.01) -> float:
     """
 
     # binary search (nice) for vdot 
-    lo, hi = 1, 600
+    lo, hi = 1, 660
     while hi - lo > tol:
         mid = (lo + hi) / 2 
-        if vdot_from_race(race_time=mid, race_distance=distance) > vdot:
+        if vdot_from_race(race_time=mid, race_distance=race_distance) > vdot:
             lo = mid
         else:
             hi = mid
