@@ -18,6 +18,7 @@ dependencies:
   - pyyaml
   - ipykernel
   - jupyterlab
+  - ipywidgets
   
   # extensions to py313-core
   - xgboost
