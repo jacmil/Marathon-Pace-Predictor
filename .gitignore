@@ -214,10 +214,6 @@ data/processed/*
 data/external/*
 !data/external/.gitkeep
 
-# Results that can be regenerated
-results/figures/*
-!results/figures/.gitkeep
-
 # Pickles
 *.pkl
 
