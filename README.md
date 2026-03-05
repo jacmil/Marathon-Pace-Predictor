@@ -9,3 +9,12 @@ build notes:
 could build predictor based on vickers data, then do probabalistic matching for finish times to append to afonseca dataset. this would take time though. probably out of scope for this week.
 
 the idea rn is to build a prediction model based on vickers (they acheived a better prediction than riegel) and then use that to do probabalistic matching for the afonseca data. hopefully I will be able to train a better model on that, as it has more data with more training aswell.
+
+#TODO
+
+add results figures
+add way to access data
+clean notebooks and rerun
+add docstrings and type hints to functions
+write clean structured readme with hero visualization
+
