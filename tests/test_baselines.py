@@ -1,7 +1,5 @@
 from src.baselines import riegel_predict, vdot_from_race, vdot_predict
 
-# don't test riegel, no edge cases
-
 def test_riegel_time_prediction_average_case():
     predicted = riegel_predict(race_time=18.00, race_distance=3, target_distance=13.1)
     assert abs(predicted - 85.93) < 2

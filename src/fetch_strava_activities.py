@@ -1,5 +1,5 @@
 """
-Fetch all activities from the Strava API and write them to a JSONL file.
+Fetch all activities from the Strava API and writes to a JSONL file
 
 Requires a .env file with:
     STRAVA_CLIENT_ID
@@ -23,7 +23,7 @@ REFRESH_TOKEN = os.environ["STRAVA_REFRESH_TOKEN"]
 TOKEN_URL = "https://www.strava.com/oauth/token"
 ACTIVITIES_URL = "https://www.strava.com/api/v3/athlete/activities"
 OUTPUT_FILE = "strava_data.jsonl"
-PER_PAGE = 200  # max allowed by Strava
+PER_PAGE = 200  # max allowed by strava
 
 
 def get_access_token() -> str:

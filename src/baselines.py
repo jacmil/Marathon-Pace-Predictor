@@ -1,6 +1,5 @@
 import math
 
-# can still write try-except
 
 def riegel_predict(race_time: float | int, race_distance: float, target_distance: float, exponent: float | float=1.06) -> float:
     """Predict race time using Riegel formula

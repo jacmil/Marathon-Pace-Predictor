@@ -1,7 +1,7 @@
-"""Filter Strava activity data to the 16-week marathon training window.
+"""Filter Strava activity data with 16-week marathon training window
 
 Keeps only activities between 2024-09-21 and 2025-01-11, and retains
-only start_date, distance, name, and moving_time columns.
+only start_date, distance, name, and moving_time columns
 """
 
 import json
