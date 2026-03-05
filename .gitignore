@@ -207,12 +207,7 @@ marimo/_lsp/
 __marimo__/
 
 # Project data (too large for git, documented in data/README.md)
-data/raw/*
-!data/raw/.gitkeep
-data/processed/*
-!data/processed/.gitkeep
-data/external/*
-!data/external/.gitkeep
+data/raw/afonseca
 
 # Pickles
 *.pkl
