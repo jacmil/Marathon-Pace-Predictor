@@ -16,7 +16,7 @@ It occurred to me recently that data/ML is a good fit for solving this issue; Th
 
 This project utilized marathon training and finish time data to create an ML model that is more accurate than the predictors I used when I ran my marathon.
 
-![Photo of me at the race.](results/figures/[IMG_5680].png)
+![Photo of me at the race.](results/figures/IMG_5680.png)
 
 ## Datasets and Sourcing
 
