@@ -16,7 +16,7 @@ It occurred to me recently that data/ML is a good fit for solving this issue; Th
 
 This project utilized marathon training and finish time data to create an ML model that is more accurate than the predictors I used when I ran my marathon.
 
-![Photo of me at the race.](results/figures/[photo].jpg)
+![Photo of me at the race.](results/figures/[IMG_5680].png)
 
 ## Datasets and Sourcing
 
@@ -129,7 +129,7 @@ Our gradient boosted model improved on the Riegel baseline MAE by 40.7% bringing
 
 | Model | MAE (min) | RMSE (min) | MAPE (%) | R² | |-------|-----------|------------|----------|------| | Riegel baseline | 15.53 | 20.89 | 6.53 | 0.78 | | VDOT baseline | 16.18 | 21.70 | 6.75 | 0.77 | | Linear Regression | 11.04 | 14.81 | 4.62 | 0.89 | | Random Forest (Tuned) | 10.10 | 14.46 | 4.16 | 0.89 | | Gradient Boosting (Tuned) | 9.86 | 14.07 | 4.02 | 0.89 |
 
-![MAE per Model by Time](results/figures/[mae_by_finish_time].png)
+![MAE per Model by Time](results/figures/mae_by_finish_time.png)
 
 ## Limitations and Next Steps
 
