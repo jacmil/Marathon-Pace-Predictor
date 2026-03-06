@@ -4,7 +4,7 @@ I built a marathon-time predictor using some standard data-science and ML tools 
 
 ## Abstract
 
-I have run a couple marathons, and each time it was really hard to target a pace. This is a problem lots marathon runners have. To solve this problem, I built a marathon finish time predictor. I used and cleaned public data from prior research projects to engineer features for a ML model which beats traditional pace predictors. More specifically, I adapted a dataset from a study by Vickers et al. that included training and demographic data along with marathon time. From this adapted dataset (n=487), and using my domain knowledge from working as a personal trainer and running marathons myself I engineered useful features for a model. I then followed standard practices to train a model that beats benchmarks, specifically the Riegel and VDOT prediction methods. My best model (gradient-boosting) boasts a 40.7% reduction on MAE from 16.64 minutes to 9.86 minutes, and 5+ minute reduction in RMSE when benchmarked on my test set. This model did suffer from being restricted to a small dataset, and predicted times above 4 hours poorly, along with suffering from overfitting to faster runners. Moving forward, I could annotate a larger training set with imputed or matched marathon times for better training, and/or I could create a web service for people to utilize this predictor for themselves.
+I have run a couple marathons, and each time it was really hard to target a pace. This is a problem lots of marathon runners have. To solve this problem, I built a marathon finish time predictor. I used and cleaned public data from prior research projects to engineer features for a ML model which beats traditional pace predictors. More specifically, I adapted a dataset from a study by Vickers et al. that included training and demographic data along with marathon time. From this adapted dataset (n=487), and using my domain knowledge from working as a personal trainer and running marathons myself I engineered useful features for a model. I then followed standard practices to train a model that beats benchmarks, specifically the Riegel and VDOT prediction methods. My best model (gradient-boosting) boasts a 40.7% reduction on MAE from 16.64 minutes to 9.86 minutes, and 5+ minute reduction in RMSE when benchmarked on my test set. This model did suffer from being restricted to a small dataset, and predicted times above 4 hours poorly, along with suffering from overfitting to faster runners. Moving forward, I could annotate a larger training set with imputed or matched marathon times for better training, and/or I could create a web service for people to utilize this predictor for themselves.
 
 ## Introduction
 
@@ -127,7 +127,13 @@ Full evaluation with residual plots, SHAP dependence plots, and tier breakdowns 
 
 Our gradient boosted model improved on the Riegel baseline MAE by 40.7% bringing it below 10 minutes, making it a viable predictor by my own standards. The most impactful features we analyzed were mean VDOT and half marathon time by runner. Our model is quite accurate for runners with times predicted 4:00 and below.
 
-| Model | MAE (min) | RMSE (min) | MAPE (%) | R² | |-------|-----------|------------|----------|------| | Riegel baseline | 15.53 | 20.89 | 6.53 | 0.78 | | VDOT baseline | 16.18 | 21.70 | 6.75 | 0.77 | | Linear Regression | 11.04 | 14.81 | 4.62 | 0.89 | | Random Forest (Tuned) | 10.10 | 14.46 | 4.16 | 0.89 | | Gradient Boosting (Tuned) | 9.86 | 14.07 | 4.02 | 0.89 |
+| Model | MAE (min) | RMSE (min) | MAPE (%) | R² |
+|-------|-----------|------------|----------|------|
+| Riegel baseline | 15.53 | 20.89 | 6.53 | 0.78 |
+| VDOT baseline | 16.18 | 21.70 | 6.75 | 0.77 |
+| Linear Regression | 11.04 | 14.81 | 4.62 | 0.89 |
+| Random Forest (Tuned) | 10.10 | 14.46 | 4.16 | 0.89 |
+| Gradient Boosting (Tuned) | 9.86 | 14.07 | 4.02 | 0.89 |
 
 ![MAE per Model by Time](results/figures/mae_by_finish_time.png)
 
@@ -144,8 +150,8 @@ Our gradient boosted model improved on the Riegel baseline MAE by 40.7% bringing
 
 
 ### Next Steps
-- **Link to Afonseca training logs:** I could use probabalistic matching to match runners in the Afonseca dataset with their actual marathon results. That would allow me to train on a dataset 100x the size, which would no doubt boost performance (aswell as create novel, useful data).
-- **Build Webapp that hooks up to Strava API** I can build a basic front and backend, along with an auth setup to connect to people's Strava API's and serve them accurate predictions. That would actually be useful to people.
+- **Link to Afonseca training logs:** I could use probabilistic matching to match runners in the Afonseca dataset with their actual marathon results. That would allow me to train on a dataset 100x the size, which would no doubt boost performance (as well as create novel, useful data).
+- **Build Webapp that hooks up to Strava API** I can build a basic front and backend, along with an auth setup to connect to people's Strava APIs and serve them accurate predictions. That would actually be useful to people.
 - **Use Bayesian or sequence modeling over training trajectories** The Afonseca dataset has training stats per week, so I would be able to model on the order and shape of training over time. These are useful techniques and would serve as a good learning opportunity for me.
 - **Conformal prediction or quantile regression for uncertainty quantification** This is also something I could do with the Afonseca dataset because of its size. Right now I return something saying "Your marathon will be X". It would be more informative to racers if I could give them a range and a confidence measure.
 
